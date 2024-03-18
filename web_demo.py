@@ -34,6 +34,7 @@ os.system('echo "--/home/xlab-app-center/model/a_simple_chat_model_w4a16_HF--"')
 # # 创建model存放路径
 #     os.chdir('/home/xlab-app-center')
 #     os.system('mkdir -p model/a_simple_chat_model')  
+
 #     base_path = '/home/xlab-app-center/model/a_simple_chat_model'
 #     os.system(f'git clone https://code.openxlab.org.cn/Xuanyuan/a_simple_chat_model.git {base_path}')
 #     os.system(f'cd {base_path} && git lfs pull')
@@ -86,12 +87,12 @@ with block as demo:
             chatbot = gr.Chatbot(height=450,show_copy_button=True)
             # 创建一个textbox用于输入prompt或者问题
             msg = gr.Textbox(label="Prompt/Question")
-        with gr.Row():
-             # 创建一个提交按钮
-            db_wo_his_btn = gr.Button("Chat")
-        with gr.Row():
-            # 创建一个清除的button，用来清除chatbot对话内容
-            clear = gr.ClearButton(components=[chatbot],value="Clear console")
+            with gr.Row():
+                 # 创建一个提交按钮
+                db_wo_his_btn = gr.Button("Chat")
+            with gr.Row():
+                # 创建一个清除的button，用来清除chatbot对话内容
+                clear = gr.ClearButton(components=[chatbot],value="Clear console")
         db_wo_his_btn.click(chat_model.get_response,inputs=[msg,chatbot],outputs=[msg,chatbot])  # 第一个参数是一个函数，第二个参数是函数输入参数，第三个参数是函数输出
     gr.Markdown("""Reminder:<br>
         1. Initializing the database may take some time, please be patient.
