@@ -1,2 +1,2 @@
 # a_simple_chat_model_4bit
-4bit量化后的a_simple_chat_model
+4bit量化后的a_simple_chat_model，采用w4a16的量化方法
