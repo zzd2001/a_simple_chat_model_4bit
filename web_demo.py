@@ -14,7 +14,31 @@ os.system('mkdir -p model/a_simple_chat_model_w4a16_HF')
 base_path = '/home/xlab-app-center/model/a_simple_chat_model_w4a16_HF'
 from openxlab.model import download
 download(model_repo='Xuanyuan/a_simple_chat_model_w4a16_HF', output=base_path)
+# 查看模型库目录
+os.chdir('/home/xlab-app-center/model')
+os.system('echo "--/home/xlab-app-center/model--"')
+os.system('pwd')
+os.system('ls')
+os.system('echo "--/home/xlab-app-center/model/--"')
 
+os.chdir('/home/xlab-app-center/model/a_simple_chat_model_w4a16_HF')
+os.system('echo "--/home/xlab-app-center/model/a_simple_chat_model_w4a16_HF--"')
+os.system('pwd')
+os.system('ls')
+os.system('echo "--/home/xlab-app-center/model/a_simple_chat_model_w4a16_HF--"')
+
+# # 创建model存放路径
+#     os.chdir('/home/xlab-app-center')
+#     os.system('mkdir -p model/a_simple_chat_model')  
+#     base_path = '/home/xlab-app-center/model/a_simple_chat_model'
+#     os.system(f'git clone https://code.openxlab.org.cn/Xuanyuan/a_simple_chat_model.git {base_path}')
+#     os.system(f'cd {base_path} && git lfs pull')
+#     # # 查看模型库目录
+#     # os.chdir('/home/xlab-app-center/model')
+#     # os.system('echo "--/home/xlab-app-center/model--"')
+#     # os.system('pwd')
+#     # os.system('ls')
+#     # os.system('echo "--/home/xlab-app-center/model--"')
 class ChatModel:
     def __init__(self):
         self.tm_model = tm.TurboMind.from_pretrained(base_path, model_name='internlm-chat-7b')
