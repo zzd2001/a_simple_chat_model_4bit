@@ -1,0 +1,2 @@
+# a_simple_chat_model_4bit
+4bit量化后的a_simple_chat_model
