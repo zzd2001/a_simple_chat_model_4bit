@@ -12,8 +12,12 @@ os.chdir('/home/xlab-app-center')
 os.system('mkdir -p model/a_simple_chat_model_w4a16_HF')
 # 下载模型
 base_path = '/home/xlab-app-center/model/a_simple_chat_model_w4a16_HF'
-from openxlab.model import download
-download(model_repo='Xuanyuan/a_simple_chat_model_w4a16_HF', output=base_path)
+# download这种方式无效
+# from openxlab.model import download
+# download(model_repo='Xuanyuan/a_simple_chat_model_w4a16_HF', output=base_path)
+# 只能采用官方推荐的这种方式
+os.system(f'git clone https://code.openxlab.org.cn/Xuanyuan/a_simple_chat_model.git {base_path}')
+os.system(f'cd {base_path} && git lfs pull')
 # 查看模型库目录
 os.chdir('/home/xlab-app-center/model')
 os.system('echo "--/home/xlab-app-center/model--"')
