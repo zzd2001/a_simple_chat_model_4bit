@@ -1,0 +1,5 @@
+openxlab
+gradio==3.50.2
+transformers==4.37.2
+sentencepiece==0.1.99
+lmdeploy==v0.1.0
